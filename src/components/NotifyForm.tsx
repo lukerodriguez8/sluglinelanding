@@ -33,7 +33,12 @@ export default function NotifyForm({ onSuccess }: NotifyFormProps) {
         body: JSON.stringify({ email }),
       });
 
-      const data = await response.json();
+      let data;
+      try {
+        data = await response.json();
+      } catch (e) {
+        throw new Error(`Server returned non-JSON response: ${response.status}`);
+      }
 
       if (response.ok) {
         setStatus("success");
@@ -42,11 +47,12 @@ export default function NotifyForm({ onSuccess }: NotifyFormProps) {
         }, 1000);
       } else {
         setStatus("error");
-        setErrorMessage(data.error || "Something went wrong.");
+        setErrorMessage(data.error || `Error ${response.status}: ${data.details || "Something went wrong"}`);
       }
-    } catch (error) {
+    } catch (error: any) {
+      console.error("Submission error:", error);
       setStatus("error");
-      setErrorMessage("Failed to connect to server.");
+      setErrorMessage(error.message === "Failed to fetch" ? "Network error: Could not reach server." : error.message);
     }
   };
 

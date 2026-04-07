@@ -26,7 +26,7 @@ function getResend() {
 
 async function startServer() {
   const app = express();
-  const PORT = 3000;
+  const PORT = process.env.PORT || 3000;
 
   app.use(express.json());
 
@@ -44,7 +44,7 @@ async function startServer() {
     if (resend) {
       try {
         await resend.emails.send({
-          from: "Slugline Studio <hello@slugline.studio>",
+          from: "onboarding@resend.dev",
           to: email,
           subject: "Welcome to the Waitlist | Slugline Studio",
           tags: [
@@ -163,15 +163,23 @@ async function startServer() {
     });
     app.use(vite.middlewares);
   } else {
-    const distPath = path.join(process.cwd(), "dist");
+    const distPath = path.resolve(__dirname, "dist");
     app.use(express.static(distPath));
     app.get("*", (req, res) => {
-      res.sendFile(path.join(distPath, "index.html"));
+      const indexPath = path.join(distPath, "index.html");
+      res.sendFile(indexPath);
     });
   }
 
-  app.listen(PORT, "0.0.0.0", () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+  const server = app.listen(Number(PORT), "0.0.0.0", () => {
+    console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`);
+  });
+
+  // Handle shutdown gracefully
+  process.on("SIGTERM", () => {
+    server.close(() => {
+      console.log("Process terminated");
+    });
   });
 }
 

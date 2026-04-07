@@ -24,7 +24,7 @@ export default function App() {
   };
 
   const layoutTransition = {
-    duration: 0.8,
+    duration: 1.2,
     ease: [0.16, 1, 0.3, 1],
   };
 
@@ -56,16 +56,16 @@ export default function App() {
           }}
           className="relative w-full max-w-[600px] p-[1px] overflow-hidden rounded-xl shadow-2xl flex flex-col max-h-[90svh] md:max-h-none group"
         >
-          {/* Rotating Glow Beam Layer - Mostly white with a small black gap */}
-          <div className="absolute inset-[-150%] bg-[conic-gradient(from_0deg,white_0deg,white_320deg,transparent_340deg,white_360deg)] opacity-40 animate-spin-slow pointer-events-none z-0" />
+          {/* Rotating Glow Beam Layer - Subtle reflection catch */}
+          <div className="absolute inset-[-150%] bg-[conic-gradient(from_0deg,transparent_0deg,transparent_280deg,rgba(255,255,255,0.1)_320deg,rgba(255,255,255,0.4)_340deg,rgba(255,255,255,0.1)_360deg)] animate-spin-slow pointer-events-none z-0" />
           
           {/* Inner Card Content */}
-          <div className="relative z-10 w-full h-full bg-black rounded-[calc(0.75rem-1px)] flex flex-col border border-white/10">
+          <div className="relative z-10 w-full h-full bg-black rounded-[calc(0.75rem-1px)] flex flex-col border border-white/5">
             {/* Content Padding - Triple Spacer Strategy */}
             <motion.div 
               layout
               transition={layoutTransition}
-              className="flex-1 flex flex-col px-6 py-8 md:px-10 md:py-16 lg:py-20 text-center h-full md:min-h-[700px]"
+              className="flex-1 flex flex-col px-6 py-8 md:px-10 md:py-16 lg:py-20 text-center h-full"
             >
               
               {/* Top Spacer - Responsive weighting */}
