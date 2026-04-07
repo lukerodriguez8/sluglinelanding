@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import "tailwindcss";
+
+/* 
+  Assuming the uploaded fonts are in the /public folder. 
+  Please ensure the filenames match these exactly, or update the URLs below.
+*/
+@font-face {
+  font-family: 'Neue Haas Grotesk Display';
+  src: url('/NeueHaasDisplay-Med.woff2') format('woff2'),
+       url('/NeueHaasDisplay-Med.woff') format('woff'),
+       local('Neue Haas Grotesk Display Pro 65 Medium'),
+       local('NeueHaasDisplay-Med');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Neue Haas Grotesk Text';
+  src: url('/NeueHaasText-Roman.woff2') format('woff2'),
+       url('/NeueHaasText-Roman.woff') format('woff'),
+       local('Neue Haas Grotesk Text Pro 55 Roman'),
+       local('NeueHaasText-Roman');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-sans: "Neue Haas Grotesk Text", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Neue Haas Grotesk Display", "Inter", sans-serif;
+  
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  --animate-spin-slow: spin-slow 8s linear infinite;
+}
+
+@layer base {
+  body {
+    @apply bg-black text-white antialiased overflow-hidden;
+    font-family: var(--font-sans);
+    /* Enable Inter features that mimic Helvetica/Haas */
+    font-feature-settings: "cv05", "cv08", "cv09", "cv11", "ss01";
+  }
+}
