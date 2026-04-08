@@ -54,89 +54,74 @@ async function startServer() {
             },
           ],
           html: `<!DOCTYPE html>
-<html lang="en" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="color-scheme" content="dark">
-  <meta name="supported-color-schemes" content="dark">
   <title>Slugline Studio</title>
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-
   <style>
-    :root { color-scheme: dark; }
-    body { margin: 0; padding: 0; background-color: #000000; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-    table { border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
-    
     @media screen and (max-width: 600px) {
-      .outer-pad { padding: 40px 16px !important; }
-      .content { padding: 48px 24px !important; }
-      .masthead-wrapper { margin-bottom: 48px !important; }
-      .text-container { width: 100% !important; padding: 0 !important; }
+      .outer-pad { padding: 40px 20px !important; }
+      .content { padding: 0 !important; }
+      .text-body { font-size: 15px !important; }
     }
   </style>
 </head>
-<body style="margin: 0; padding: 0; background-color: #000000;">
-
-  <div style="display: none; font-size: 1px; color: #000000; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
-    Thanks for stepping in early. We're building this in the open.
-    &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
-  </div>
-
-  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000" style="background-color: #000000;">
+<body style="margin: 0; padding: 0; background-color: #000000; font-family: 'Inter', Helvetica, Arial, sans-serif;">
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
     <tr>
-      <td class="outer-pad" align="center" style="background-color: #000000; padding: 100px 20px;">
-        <table class="container" role="presentation" width="600" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000" style="width: 100%; max-width: 600px; margin: 0 auto; background-color: #000000; border: 1px solid #ffffff; border-radius: 12px; overflow: hidden;">
+      <td class="outer-pad" align="center" style="padding: 60px 0;">
+        
+        <table role="presentation" width="600" cellspacing="0" cellpadding="0" border="0" style="width: 100%; max-width: 600px; margin: 0 auto;">
           <tr>
-            <td class="content" align="center" style="padding: 80px 40px; text-align: center;">
+            <td class="content" align="center" style="padding: 0 40px; text-align: center;">
               
-              <div class="masthead-wrapper" style="margin-bottom: 56px;">
-                <div class="logo-mark" style="display: inline-block; width: 40px; height: 40px; line-height: 40px; background-color: #ffffff; border-radius: 4px; text-align: center; color: #000000; font-size: 24px; font-weight: bold; font-family: 'Neue Haas Grotesk Display', 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif; margin-bottom: 16px;">S</div>
-                <div class="brand-name" style="display: block; color: #ffffff; font-size: 13px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; font-family: 'Neue Haas Grotesk Display', 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;">SLUGLINE STUDIO</div>
+              <div style="margin-bottom: 48px;">
+                <div style="display: inline-block; width: 40px; height: 40px; line-height: 40px; background-color: #ffffff; border-radius: 4px; color: #000000; font-size: 24px; font-weight: bold; text-align: center;">S</div>
+                <div style="margin-top: 16px; color: #ffffff; font-size: 13px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase;">SLUGLINE STUDIO</div>
               </div>
               
-              <div class="text-container" style="max-width: 480px; margin: 0 auto; text-align: center;">
+              <div class="text-body" style="color: #ffffff; font-size: 16px; line-height: 1.6; text-align: center; max-width: 440px; margin: 0 auto;">
                 
-                <p style="margin: 0 0 32px 0; color: #ffffff; font-size: 16px; line-height: 1.5; font-weight: 400; font-family: 'Neue Haas Grotesk Text', 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;">
+                <p style="margin: 0 0 24px 0;">
                   Thanks for stepping in early.
                 </p>
                 
-                <p style="margin: 0 0 32px 0; color: #ffffff; font-size: 16px; line-height: 1.5; font-weight: 400; font-family: 'Neue Haas Grotesk Text', 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;">
+                <p style="margin: 0 0 24px 0;">
                   We’re building this in the open,<br>
                   and we’ll keep you close as it takes shape.<br>
                   You’ll hear from us with occasional updates<br>
                   as the system evolves into what it’s built to do.
                 </p>
                 
-                <p style="margin: 0 0 32px 0; color: #ffffff; font-size: 16px; line-height: 1.5; font-weight: 400; font-family: 'Neue Haas Grotesk Text', 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;">
+                <p style="margin: 0 0 24px 0;">
                   We’re also running a small pilot right now<br>
                   with a handful of companies who feel the gap<br>
                   and want to explore a different way of working.
                 </p>
                 
-                <p style="margin: 0 0 48px 0; color: #ffffff; font-size: 16px; line-height: 1.5; font-weight: 400; font-family: 'Neue Haas Grotesk Text', 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;">
-                  If that’s you, just reply here. We’ll walk you through it.
+                <p style="margin: 0 0 32px 0;">
+                  If that’s you, just reply here.<br>
+                  We’ll walk you through it.
                 </p>
                 
-                <p style="margin: 0; color: #ffffff; font-size: 16px; line-height: 1.5; font-weight: 400; font-family: 'Neue Haas Grotesk Text', 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;">
+                <p style="margin: 0;">
                   More soon.<br>
-                  <strong>Team Slugline</strong>
+                  <strong style="font-weight: bold;">Team Slugline</strong>
                 </p>
 
               </div>
 
-              <div class="footer" style="margin-top: 80px; color: #444444; font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; font-family: 'Neue Haas Grotesk Text', 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif; text-align: center;">
+              <div style="margin-top: 64px; color: #444444; font-size: 10px; letter-spacing: 0.05em; text-transform: uppercase;">
                 &copy; 2026 SLUGLINE STUDIO. ALL RIGHTS RESERVED.
               </div>
 
             </td>
           </tr>
         </table>
-        </td>
+
+      </td>
     </tr>
   </table>
 </body>
