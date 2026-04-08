@@ -71,7 +71,7 @@ export default function NotifyForm({ onSuccess }: NotifyFormProps) {
               if (status === "error") setStatus("idle");
             }}
             placeholder="Enter your email"
-            className="flex-1 bg-transparent border-none outline-none text-white placeholder:text-white/30 py-2 md:py-3 text-xs md:text-sm"
+            className="flex-1 bg-transparent border-none outline-none text-white placeholder:text-white/30 py-2 md:py-3 text-base md:text-sm"
             disabled={status === "loading" || status === "success"}
           />
           <motion.button
