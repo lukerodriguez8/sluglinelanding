@@ -35,7 +35,7 @@ export default function App() {
         <motion.div 
           animate={{ 
             scale: isSubscribed ? 1.1 : 1,
-            opacity: isSubscribed ? 0.08 : 0.03
+            opacity: isSubscribed ? 0.04 : 0.01
           }}
           transition={cinematicTransition}
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-white rounded-full blur-[160px]" 

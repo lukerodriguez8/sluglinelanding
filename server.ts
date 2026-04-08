@@ -44,7 +44,7 @@ async function startServer() {
     if (resend) {
       try {
         await resend.emails.send({
-          from: "onboarding@resend.dev",
+          from: "Slugline Studio <hello@slugline.studio>",
           to: email,
           subject: "Welcome to the Waitlist | Slugline Studio",
           tags: [
