@@ -57,7 +57,7 @@ export default function NotifyForm({ onSuccess }: NotifyFormProps) {
   };
 
   return (
-    <div className="w-full max-w-[280px] md:max-w-md mx-auto">
+    <div className="w-full max-w-[320px] md:max-w-md mx-auto">
       <form onSubmit={handleSubmit} className="relative group">
         <motion.div
           whileHover={{ scale: 1.01 }}
@@ -71,7 +71,7 @@ export default function NotifyForm({ onSuccess }: NotifyFormProps) {
               if (status === "error") setStatus("idle");
             }}
             placeholder="Enter your email"
-            className="flex-1 bg-transparent border-none outline-none text-white placeholder:text-white/30 py-2 md:py-3 text-base md:text-sm"
+            className="flex-1 min-w-0 bg-transparent border-none outline-none text-white placeholder:text-white/30 py-2 md:py-3 text-base md:text-sm"
             disabled={status === "loading" || status === "success"}
           />
           <motion.button
@@ -79,7 +79,7 @@ export default function NotifyForm({ onSuccess }: NotifyFormProps) {
             whileTap={{ scale: 0.95 }}
             type="submit"
             disabled={status === "loading" || status === "success"}
-            className="bg-white text-black h-8 md:h-10 px-4 md:px-6 rounded-full font-medium text-[10px] md:text-sm flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="flex-shrink-0 bg-white text-black h-8 md:h-10 px-4 md:px-6 rounded-full font-medium text-[10px] md:text-sm flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {status === "loading" ? (
               <Loader2 className="w-4 h-4 animate-spin" />
