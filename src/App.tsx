@@ -35,13 +35,9 @@ export default function App() {
         
         {/* The Container (Matching Email) with Glow Beam */}
         <motion.div
-          layout
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{
-            ...cinematicTransition,
-            layout: layoutTransition
-          }}
+          transition={cinematicTransition}
           className="relative w-full max-w-[600px] p-[1px] overflow-hidden rounded-xl shadow-2xl flex flex-col max-h-[90svh] md:max-h-none group"
         >
           {/* Rotating Glow Beam Layer - Mostly white with a small dark gap */}
@@ -50,39 +46,21 @@ export default function App() {
           {/* Inner Card Content */}
           <div className="relative z-10 w-full h-full bg-black rounded-[calc(0.75rem-1px)] flex flex-col border border-white/10">
             {/* Content Padding - Triple Spacer Strategy */}
-            <motion.div 
-              layout
-              transition={layoutTransition}
-              className="flex-1 flex flex-col px-6 py-8 md:px-10 md:py-16 lg:py-20 text-center h-full md:min-h-[700px]"
-            >
+            <div className="flex-1 flex flex-col px-6 py-8 md:px-10 md:py-16 lg:py-20 text-center h-full md:min-h-[700px]">
               
               {/* Top Spacer - Responsive weighting */}
-              <motion.div layout transition={layoutTransition} className="flex-[0.4] md:flex-[0.5]" />
+              <div className="flex-[0.4] md:flex-[0.5]" />
 
               {/* Masthead */}
-              <motion.div 
-                layout
-                transition={layoutTransition}
-                className="mb-8 md:mb-12 flex flex-col items-center"
-              >
+              <div className="mb-8 md:mb-12 flex flex-col items-center">
                 <Logo onClick={() => setIsSubscribed(false)} />
-                <motion.div
-                  layout
-                  transition={layoutTransition}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  className="mt-2 text-[10px] md:text-[13px] font-display font-medium text-white tracking-[0.15em] uppercase"
-                >
+                <div className="mt-2 text-[10px] md:text-[13px] font-display font-medium text-white tracking-[0.15em] uppercase">
                   Slugline Studio
-                </motion.div>
-              </motion.div>
+                </div>
+              </div>
 
               {/* Middle Spacer / Content Area */}
-              <motion.div 
-                layout 
-                transition={layoutTransition}
-                className="flex-1 flex flex-col items-center justify-center w-full min-h-0 relative"
-              >
+              <div className="flex-1 flex flex-col items-center justify-center w-full min-h-0 relative">
                 <AnimatePresence mode="popLayout">
                   {!isSubscribed ? (
                     <motion.div
@@ -157,22 +135,21 @@ export default function App() {
                     </motion.div>
                   )}
                 </AnimatePresence>
-              </motion.div>
+              </div>
 
               {/* Footer */}
               <motion.div 
-                layout
-                transition={layoutTransition}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 0.3 }}
+                transition={{ delay: 0.8 }}
                 className="mt-8 md:mt-12 text-[9px] uppercase tracking-[0.1em] font-medium text-white/60"
               >
                 © 2026 Slugline Studio. All rights reserved.
               </motion.div>
 
               {/* Bottom Spacer - Stronger to push content up significantly */}
-              <motion.div layout transition={layoutTransition} className="flex-[1.5] md:flex-[2]" />
-            </motion.div>
+              <div className="flex-[1.5] md:flex-[2]" />
+            </div>
           </div>
         </motion.div>
       </div>
