@@ -30,18 +30,6 @@ export default function App() {
 
   return (
     <main className="relative min-h-[100svh] bg-black flex flex-col items-center justify-center overflow-x-hidden p-4">
-      {/* Background Atmosphere - Subtler for the boxed look */}
-      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        <motion.div 
-          animate={{ 
-            scale: isSubscribed ? 1.1 : 1,
-            opacity: isSubscribed ? 0.04 : 0.01
-          }}
-          transition={cinematicTransition}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-white rounded-full blur-[160px]" 
-        />
-      </div>
-
       {/* Outer Padding Wrapper */}
       <div className="relative z-10 w-full flex flex-col items-center max-h-full">
         
