@@ -24,7 +24,11 @@ export default function App() {
       "AI to find the signal. Journalistic instinct to shape it.",
       "A system that learns and shifts autonomously."
     ],
-    ["If you've felt the gap, you're in the right place."]
+    ["If you've felt the gap, you're in the right place."],
+    [
+      "We're running a small pilot right now with a handful of companies who feel the gap and want to explore a different way of working.",
+      "If that's you, drop your email here. We'll walk you through it."
+    ]
   ];
 
   return (
@@ -63,9 +67,19 @@ export default function App() {
                 {/* Copy — always visible, staggered in */}
                 <div className="space-y-4 md:space-y-6 font-display w-full mb-8 md:mb-12">
                   {copy.map((paragraph, pIndex) => (
-                    <div key={pIndex} className={pIndex === 3 ? "pt-4 md:pt-6" : "space-y-1"}>
+                    <div
+                      key={pIndex}
+                      className={
+                        pIndex === 3 ? "pt-4 md:pt-6 space-y-1"
+                        : pIndex === 4 ? "pt-2 space-y-1"
+                        : "space-y-1"
+                      }
+                    >
                       {paragraph.map((line, lIndex) => (
-                        <p key={lIndex} className="text-white/90 text-[13px] md:text-base leading-relaxed font-light max-w-[480px] mx-auto overflow-hidden">
+                        <p
+                          key={lIndex}
+                          className="text-white/90 text-[13px] md:text-base leading-relaxed font-light max-w-[480px] mx-auto overflow-hidden"
+                        >
                           <motion.span
                             initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
                             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
@@ -88,7 +102,7 @@ export default function App() {
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ ...cinematicTransition, delay: 1.4 }}
+                  transition={{ ...cinematicTransition, delay: 1.8 }}
                   className="w-full"
                 >
                   <NotifyForm />

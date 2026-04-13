@@ -72,43 +72,33 @@ async function startServer() {
   <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000">
     <tr>
       <td class="outer-pad" align="center" style="padding: 60px 0;">
-        
+
         <table role="presentation" width="600" cellspacing="0" cellpadding="0" border="0" style="width: 100%; max-width: 600px; margin: 0 auto;">
           <tr>
             <td class="content" align="center" style="padding: 0 40px; text-align: center;">
-              
+
               <div style="margin-bottom: 48px;">
                 <div style="display: inline-block; width: 40px; height: 40px; line-height: 40px; background-color: #ffffff; border-radius: 4px; color: #000000; font-size: 24px; font-weight: bold; text-align: center;">S</div>
                 <div style="margin-top: 16px; color: #ffffff; font-size: 13px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase;">SLUGLINE STUDIO</div>
               </div>
-              
+
               <div class="text-body" style="color: #ffffff; font-size: 16px; line-height: 1.6; text-align: center; max-width: 440px; margin: 0 auto;">
-                
+
                 <p style="margin: 0 0 24px 0;">
                   Thanks for stepping in early.
                 </p>
-                
+
                 <p style="margin: 0 0 24px 0;">
-                  We’re building this in the open,<br>
-                  and we’ll keep you close as it takes shape.<br>
-                  You’ll hear from us with occasional updates<br>
-                  as the system evolves into what it’s built to do.
+                  We're building this in the open,<br>
+                  and we'll keep you close as it takes shape.<br>
+                  You'll hear from us with occasional updates<br>
+                  as the system evolves into what it's built to do.
                 </p>
-                
-                <p style="margin: 0 0 24px 0;">
-                  We’re also running a small pilot right now<br>
-                  with a handful of companies who feel the gap<br>
-                  and want to explore a different way of working.
-                </p>
-                
+
                 <p style="margin: 0 0 32px 0;">
-                  If that’s you, just reply here.<br>
-                  We’ll walk you through it.
-                </p>
-                
-                <p style="margin: 0;">
-                  More soon.<br>
-                  <strong style="font-weight: bold;">Team Slugline</strong>
+                  You've also expressed interest in our pilot.<br>
+                  Expect to hear from a real person within 24 hours<br>
+                  to get you set up.
                 </p>
 
               </div>
@@ -133,7 +123,6 @@ async function startServer() {
         return res.status(500).json({ error: "Failed to send email", details: error.message });
       }
     } else {
-      // Mock success if no API key
       console.log("Mocking email success (no API key provided)");
       return res.json({ success: true, message: "Email mocked (no API key)" });
     }
@@ -159,7 +148,6 @@ async function startServer() {
     console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`);
   });
 
-  // Handle shutdown gracefully
   process.on("SIGTERM", () => {
     server.close(() => {
       console.log("Process terminated");
