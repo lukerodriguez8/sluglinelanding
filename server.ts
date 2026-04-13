@@ -101,6 +101,10 @@ async function startServer() {
                   to get you set up.
                 </p>
 
+                <p style="margin: 0;">
+                  &mdash; Team Slugline
+                </p>
+
               </div>
 
               <div style="margin-top: 64px; color: #444444; font-size: 10px; letter-spacing: 0.05em; text-transform: uppercase;">
@@ -117,6 +121,17 @@ async function startServer() {
 </body>
 </html>`,
         });
+        // Internal notification to the Slugline team
+        await resend.emails.send({
+          from: "Slugline Studio <hello@slugline.studio>",
+          to: ["luke@slugline.studio", "melissa@slugline.studio", "lisa@slugline.studio"],
+          subject: `New signup: ${email}`,
+          html: `<p style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; color: #000000;">
+            New signup on slugline.studio:<br><br>
+            <strong>${email}</strong>
+          </p>`,
+        });
+
         return res.json({ success: true, message: "Email sent successfully" });
       } catch (error: any) {
         console.error("Resend error:", error);
