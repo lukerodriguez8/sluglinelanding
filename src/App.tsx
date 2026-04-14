@@ -32,7 +32,7 @@ export default function App() {
   ];
 
   return (
-    <main className="relative min-h-[100svh] bg-black flex flex-col items-center justify-center overflow-x-hidden p-4">
+    <main className="relative min-h-[100svh] bg-black flex flex-col items-center justify-center overflow-x-hidden p-4 py-8">
       {/* Outer Padding Wrapper */}
       <div className="relative z-10 w-full flex flex-col items-center max-h-full">
 
@@ -41,14 +41,14 @@ export default function App() {
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={cinematicTransition}
-          className="relative w-full max-w-[600px] p-[1px] overflow-hidden rounded-xl shadow-2xl flex flex-col max-h-[90svh] md:max-h-none group"
+          className="relative w-full max-w-[600px] p-[1px] overflow-hidden rounded-xl shadow-2xl flex flex-col group"
         >
           {/* Rotating Glow Beam Layer */}
           <div className="absolute inset-[-150%] bg-[conic-gradient(from_0deg,white_0deg,white_330deg,transparent_345deg,white_360deg)] opacity-40 animate-spin-slow pointer-events-none z-0" />
 
           {/* Inner Card Content */}
           <div className="relative z-10 w-full h-full bg-black rounded-[calc(0.75rem-1px)] flex flex-col border border-white/10">
-            <div className="flex-1 flex flex-col px-6 py-8 md:px-10 md:py-16 lg:py-20 text-center h-full md:min-h-[700px]">
+            <div className="flex-1 flex flex-col px-6 py-8 md:px-10 md:py-16 lg:py-20 text-center md:min-h-[700px] overflow-y-auto">
 
               {/* Top Spacer */}
               <div className="flex-[0.4] md:flex-[0.5]" />
